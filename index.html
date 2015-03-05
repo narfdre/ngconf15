@@ -1,13 +1,29 @@
 <html ng-app="turbo">
-	<head>
-		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src="scripts/app.js"></script>
-		<script src="scripts/d3.js"></script>
-	</head>
-	<body>
-		<div ng-controller="MainController">
-			<d3-bars data="data"></d3-bars>
-		</div>
-	</body>
+    <head>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/d3.js"></script>
+        <script src="scripts/dchart.js"></script>
+        <script src="scripts/scatter.js"></script>
+    </head>
+    <body>
+        <div ng-controller="MainController">
+            <h2>{{greeting}}</h2>
+            <d3-bars data="data"></d3-bars>
+            <h2>Scatter Plot</h2>
+            <div class="form-horizontal">
+                <button class="btn" ng-click="randomizeScatter1()">Randomize!</button>
+            </div>
+            <p>
+            <dchart-scatter width="600" height="300">
+	            <axis>
+		            <x align="bottom">x Axis</x>
+		            <y align="left">y Axis</y>
+	            </axis>
+	            <data-set stroke="darkgreen" fill="green" fill-opacity="0.8" stroke-width="0.5" data="scatterDataSet1">
+	            </data-set>
+            </dchart-scatter>
+        </div>
+    </body>
 </html>
